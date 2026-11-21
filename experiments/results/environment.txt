@@ -1,0 +1,10 @@
+Date:       2026-11-21 18:50
+OS:         Windows-11-10.0.26200-SP0
+CPU:        Intel64 Family 6 Model 142 Stepping 10, GenuineIntel  (8 logical cores)
+Python:     3.13.14 (CPython)
+Timer:      time.perf_counter()
+Procedure:  1 warm-up run(s), then 7 timed runs per instance
+Excluded:   graph construction, CostModel construction, rendering, file I/O, correctness checks
+Included:   the algorithm's own queue/heap/dictionary initialisation
+GC:         Python garbage collector disabled during timed runs (as timeit does)
+Counters:   collected in a separate untimed run
