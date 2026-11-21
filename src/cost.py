@@ -6,7 +6,7 @@ import math
 from src.graph import RESTRICTED
 
 # Weights (d, t, f, r, o) = distance, time, fuel, difficulty, obstacle.
-# All non-negative. DRAFT values: tune, then freeze and document.
+# FROZEN on 21 Nov 2026: do not change after experiments start
 PRESETS = {
     "Balanced": {"d": 0.2, "t": 0.2, "f": 0.2, "r": 0.2,  "o": 0.2},
     "Speed":    {"d": 0.1, "t": 0.6, "f": 0.1, "r": 0.1,  "o": 0.1},
