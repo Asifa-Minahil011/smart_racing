@@ -1,0 +1,53 @@
+CHALLENGE 2: multi-objective route planning
+============================================
+
+PART 1. Frozen preset weights (d, t, f, r, o):
+  Balanced  d=0.20  t=0.20  f=0.20  r=0.20  o=0.20
+  Speed     d=0.10  t=0.60  f=0.10  r=0.10  o=0.10
+  Economy   d=0.10  t=0.10  f=0.60  r=0.10  o=0.10
+  Safety    d=0.10  t=0.10  f=0.10  r=0.35  o=0.35
+
+Leg 3 -> 4
+chosen by  route                   dist   time   fuel   cost[Bal]  cost[Spe]  cost[Eco]  cost[Saf]
+Balanced   3>14>4                   229   22.9   11.5       0.620      0.866      0.749      0.310
+Speed      3>4                      158   15.8   11.1       0.676      0.722      0.762      0.588
+Economy    3>21>4                   164   16.4    9.8       0.669      0.732      0.711      0.585
+Safety     3>14>4                   229   22.9   11.5       0.620      0.866      0.749      0.310
+
+Leg 8 -> 9
+chosen by  route                   dist   time   fuel   cost[Bal]  cost[Spe]  cost[Eco]  cost[Saf]
+Balanced   8>15>9                   257   25.7   12.8       0.694      0.969      0.838      0.347
+Speed      8>9                      201   20.1   13.1       0.740      0.857      0.870      0.557
+Economy    8>15>9                   257   25.7   12.8       0.694      0.969      0.838      0.347
+Safety     8>15>9                   257   25.7   12.8       0.694      0.969      0.838      0.347
+
+Read down a column: the route chosen by a preset is the cheapest one under that preset's own cost,
+and it costs more under the other presets.
+
+PART 2. Changing weights changes the chosen route
+
+Weight sweep, leg 3 -> 4: time weight 0 -> 1, other four weights share the remainder equally
+  from w_time = 0.00: route 3>14>4
+  from w_time = 0.35: route 3>21>4
+  from w_time = 0.40: route 3>4
+
+Weight sweep, leg 8 -> 9: time weight 0 -> 1, other four weights share the remainder equally
+  from w_time = 0.00: route 8>15>9
+  from w_time = 0.35: route 8>9
+
+PART 3. Limitation of one weighted scalar cost
+
+Pareto analysis, leg 3 -> 4: 6 candidate simple paths (<= 8 roads), objectives (time, fuel, risk)
+  Pareto-optimal routes: 3
+  chosen by at least one of 3000 random weight vectors: 3
+  Every Pareto-optimal route on this leg is chosen by some weights, so this circuit shows no such gap; the constructed example below does.
+
+Constructed example: three parallel roads, weights only on time and risk
+  A fast+dangerous   normalised time 0.20  risk 1.00
+  B compromise       normalised time 0.72  risk 0.50
+  C slow+safe        normalised time 1.00  risk 0.00
+  A fast+dangerous   chosen for w_time in [0.56, 1.00]
+  B compromise       chosen for NO weight at all (101 values tried)
+  C slow+safe        chosen for w_time in [0.00, 0.55]
+  B is not dominated (A is faster, C is safer) yet no weighted sum ever picks it:
+  it lies above the straight line joining A and C in (time, risk) space.
