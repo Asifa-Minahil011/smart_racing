@@ -1,13 +1,3 @@
-"""Experiment 2: Dijkstra vs A*. Owner: Asifa Minahil.
-
-Instances: every circuits/*.json plus generated graphs with coordinates
-(city-like grids and a random graph). Every instance is run under all four
-presets on several source/target pairs.
-
-Run from the project root:   python -m experiments.exp2_dijkstra_astar
-Quick test run:              python -m experiments.exp2_dijkstra_astar --quick
-"""
-
 import argparse
 import glob
 import os

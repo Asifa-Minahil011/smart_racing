@@ -1,5 +1,3 @@
-"""Smoke tests: the experiment scripts run end to end on tiny inputs, write
-their CSV/chart files, and their built-in correctness checks pass."""
 import os
 os.environ.setdefault("MPLBACKEND", "Agg")
 

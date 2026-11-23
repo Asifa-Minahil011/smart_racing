@@ -1,16 +1,3 @@
-"""Shared helpers for the experiments. Owner: Asifa Minahil.
-
-Timing rules used by every experiment (state these in the report):
-- time.perf_counter(), one warm-up run (discarded), then N timed runs;
-- the same graph instances are given to competing algorithms;
-- timing EXCLUDES graph construction, CostModel construction, rendering,
-  file I/O and all correctness checks;
-- timing INCLUDES the algorithm's own data-structure initialisation
-  (queue / heap / dictionaries), because every run creates them;
-- the garbage collector is disabled during timed runs (as timeit does);
-- counters are collected in a separate, untimed run.
-"""
-
 import csv
 import datetime
 import gc

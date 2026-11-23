@@ -1,9 +1,3 @@
-"""Experiment 1: BFS and DFS vs input size and density. Owner: Person A.
-
-Run from the project root:   python -m experiments.exp1_bfs_dfs
-Quick test run:              python -m experiments.exp1_bfs_dfs --quick
-"""
-
 import argparse
 import os
 

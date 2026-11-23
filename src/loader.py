@@ -1,5 +1,3 @@
-"""Load a circuit JSON file into a Graph. Owner: Asifa Minahil."""
-
 import json
 import math
 from dataclasses import dataclass

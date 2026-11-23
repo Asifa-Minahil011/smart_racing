@@ -1,7 +1,3 @@
-"""Operation counters and the observer hook. Owner: Asifa Minahil.
-Every algorithm accepts optional counters= and observer= arguments.
-The Algorithm Lab passes an observer to step through the real algorithm."""
-
 from dataclasses import dataclass, asdict
 
 

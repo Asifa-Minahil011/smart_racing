@@ -1,13 +1,3 @@
-"""Challenge 2: multi-objective route planning. Owner: Asifa Minahil.
-
-Shows (1) the route each preset picks, with every route re-costed under every
-preset, (2) how sweeping one weight switches the chosen route, and (3) the
-limitation of a single weighted cost: a route can be a good compromise
-(Pareto-optimal) and still never be chosen by ANY weights.
-
-Run from the project root:   python -m experiments.challenge2_presets
-"""
-
 import os
 import random
 

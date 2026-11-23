@@ -1,10 +1,4 @@
 """Track Explorer / Route Planner screen (Pygame). Owner: Asifa Minahil.
-
-Every number on this screen comes from the same functions the race uses:
-bfs_path, dfs_traversal, dijkstra, astar, plan_route, CostModel.edge_cost.
-Nothing here re-implements an algorithm.
-
-Run it from the project root:   python -m src.ui_explorer
 Controls:
   left click    pick the DESTINATION vertex
   shift + click pick the START vertex (default: the circuit start)

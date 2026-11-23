@@ -1,7 +1,3 @@
-"""Edge cost, normalization and presets. Owner: Asifa Minahil.
-One CostModel is used by the algorithms AND the UI, so the number shown
-to the player is exactly the number that was optimized."""
-
 import math
 from src.graph import RESTRICTED
 

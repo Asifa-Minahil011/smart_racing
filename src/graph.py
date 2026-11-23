@@ -1,6 +1,3 @@
-"""Track graph: vertices, edges, adjacency lists, dynamic updates.
-Owner: Person A. Others must change the graph only through the methods below."""
-
 from dataclasses import dataclass
 
 # Edge status values

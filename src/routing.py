@@ -1,7 +1,3 @@
-"""Dijkstra, A* and checkpoint-aware route planning. Owner: Asifa Minahil.
-Every route is costed with the CostModel passed in, so the cost shown in
-the UI is exactly the cost the search optimized."""
-
 import heapq
 from dataclasses import dataclass
 
